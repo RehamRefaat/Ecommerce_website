@@ -1,0 +1,44 @@
+{%extends 'home.html'%}
+    {%block bar%}
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="#">Home</a>
+                    <a class="breadcrumb-item text-dark" href="#">Product</a>
+                    <span class="breadcrumb-item active">List Product</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+{%block product%}
+    <!-- Products Start -->
+    <!-- Contact Start -->
+    <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Product List</span></h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form bg-light p-30">
+                    <div id="success"></div>
+                    <table  width="100%" id="contactForm" border="2">
+                        {%csrf_token%}
+                        <tr>
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Category Id</th>
+                       </tr>
+                        {%for product in products%}
+                         <tr>
+                            <td>{{product.Idpro}}</td>
+                            <td>{{product.namepro}}</td>
+                             <td>{{product.catid}}</td>
+                         </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {%endblock%}

@@ -1,0 +1,15 @@
+{%extends 'account/register.html'%}
+{% block title %}
+Ecommerce Login Form
+{%endblock%}
+{% block content %}
+Login
+{% endblock %}
+{% block content2 %}
+{%csrf_token%}
+					<input type="text" name="txt" placeholder="User name">
+					<input type="password" name="pswd" placeholder="Password">
+{% endblock %}
+{% block button %}
+<button>Login</button>
+{%endblock%}
